@@ -1,0 +1,61 @@
+<div *ngIf="model != null && model.temp != null">
+    <table border="2">
+        <tr>
+            <th align="left">
+                Temperature: 
+            </th>
+            <td>
+              {{ model.temp }}
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Pressure: 
+            </th>
+            <td>
+              {{ model.pressure }}
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Humidity: 
+            </th>
+            <td>
+              {{ model.humidity }}
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Minimum Temperature: 
+            </th>
+            <td>
+              {{ model.temp_min }}
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Maximum Temperature: 
+            </th>
+            <td>
+              {{ model.temp_max }}
+            </td>
+        </tr>
+    </table>   
+       
+    <h3> Weather(s): </h3>
+
+    <div >
+      <table *ngFor="let weatherData of model.weatherDatas;" border="1">
+        <tr>
+            <th align="left">
+                Weather: 
+            </th>
+            <td>
+                <img [src] = "weatherData.icon">
+              {{ weatherData.description }}
+            </td>
+        </tr>
+      </table>
+    </div>
+
+</div>
